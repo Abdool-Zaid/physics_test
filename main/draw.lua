@@ -7,7 +7,7 @@ local p={x=-1,y=-1}
 res.brush_size =4
 res.arc=12
 res.brush_color ={255,255,255}
-local util = require("util")
+
 function res.test()
     return "working"
 end
@@ -95,7 +95,7 @@ function Draw_temp()
 end
 
 function res.objects()
-    
+    return char
 end
 function res.trace()
     Draw_temp()

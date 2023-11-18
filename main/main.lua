@@ -1,9 +1,10 @@
 local coor = {}
-Loca obj_table = {}
+local obj_table = {}
+local util = require("util")
 Trail = require("draw")
 Phys = require("main.physics")
 function love.load()
-
+Phys.intit()
 end
 
 function love.update(dt)
@@ -19,7 +20,10 @@ end
 function love.mousereleased(x,y,button)
     if button == 1 then
         Trail.Mouse_released()
-    
+        obj_table= Trail.objects()
+        Phys.add_bodies(obj_table)
+        elseif button== 2 then
+            Phys.render_bool=true
     end
 end
 
@@ -27,6 +31,6 @@ end
 function love.draw()
     
     Trail.trace()
-  
+    Phys.render()
 
 end
